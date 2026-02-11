@@ -1,0 +1,140 @@
+
+
+
+body {
+    background: #eef1f6;
+    font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+.todo-wrapper {
+    max-width: 650px;
+    margin: 90px auto;
+    padding: 0 20px;
+}
+
+.todo-card {
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+    padding: 40px;
+}
+
+.todo-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 30px;
+}
+
+/* Input + Button */
+.todo-input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.todo-input {
+    border-radius: 12px;
+    border: 1px solid #dce3f0;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    flex: 1;
+}
+
+.todo-input:focus {
+    border-color: #fd680d;
+    box-shadow: 0 0 0 4px rgba(253, 104, 13, 0.08);
+}
+
+.add-btn {
+    background: #fd680d;
+    color: #fff;
+    border: none;
+    padding: 0 22px;
+    border-radius: 12px;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.add-btn:hover {
+    background: #e65c00;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-item {
+    position: relative;
+    padding: 16px 40px 16px 40px;
+    border-bottom: 1px solid #f1f3f7;
+    cursor: pointer;
+    font-size: 0.97rem;
+    color: #374151;
+    transition: 0.2s ease;
+}
+
+/* Circle */
+.task-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #fd680d;
+    border-radius: 50%;
+}
+
+/* Completed */
+.task-item.completed {
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
+.task-item.completed::before {
+    background-color: #fd680d;
+}
+
+.task-item.completed::after {
+    content: "✓";
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-55%);
+    color: #fff;
+    font-size: 12px;
+}
+
+/* Delete button */
+.delete-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 6px;
+    color: #5e6061;
+    cursor: pointer;
+    transition: 0.2s ease;
+    font-size: 25px;
+}
+
+.delete-btn:hover {
+    background-color: #f1f1f1;
+    color: #fd680d;
+}
+
+
+
+@media (max-width: 576px) {
+    .todo-card {
+        padding: 25px;
+    }
+}
